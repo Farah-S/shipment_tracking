@@ -2,16 +2,18 @@ import './App.css';
 import NavHeader from './components/header';
 import ShipmentDetails from './components/shipment_details';
 import StepProgressBar from './components/progress_bar';
+import * as constants from './utils/constants';
+
 function App() {
-  var status="DELIVERED_TO_SENDER"
-  var color='#F9BA02';
+  var status=constants.STATES[1];
+  var color=constants.YELLOW_COLOR;
   switch (status) {
     case "DELIVERED":
         status="Delivered";
-        color="#36B600";
+        color=constants.GREEN_COLOR;
         break;
     case "CANCELLED":
-        color="red";
+        color=constants.RED_COLOR;
         status="Cancelled";
         break;
     default:
@@ -26,7 +28,7 @@ function App() {
       </header>
       <body className='App-body'>
         <ShipmentDetails color={color} id='15248' status={status} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
-        <StepProgressBar color={color} percent={34}/>
+        <StepProgressBar color={color} percent={constants.PERCENTAGES[1]}/>
       </body>
     </div>
   );
