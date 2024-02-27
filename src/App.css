@@ -44,6 +44,8 @@
 
 .App-body {
   display:grid;
+  margin-top: 8vh;
+  
   justify-content: center;
   font-family: "Cairo";
 }
@@ -62,13 +64,30 @@
 .Details{
   display:flex; 
   justify-content: space-between; 
-  width:75vw;
-  margin-top: 8vh;
-  padding: 3vh;
-  border-color: rgb(243, 243, 243);
+  width:65vw;
+  /* margin-top: 8vh; */
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  border-bottom-color: rgb(243, 243, 243);
+  border-bottom-style: solid;
+  /* border-radius: 1rem; */
+  border-bottom-width: 2px;
+}
+
+.Grey-border{
+   border-color: rgb(243, 243, 243);
   border-style: solid;
   border-radius: 1rem;
   border-width: 2px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Progress-row{
+  padding: 3vh;
 }
 
 .App-header {

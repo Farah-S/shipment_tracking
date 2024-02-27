@@ -30,9 +30,9 @@ function App() {
         <NavHeader/>
       </header>
       <body className='App-body'>
-        <Col>
+        <Col className='Grey-border'>
           <ShipmentDetails color={color} id='15248' status={status} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
-          <Row>
+          <Row className='Progress-row'>
             <StepProgressBar color={color} percent={percent}/>
             <ProgressBarTitles percent={percent}/>
           </Row>

@@ -19,13 +19,13 @@ function ProgressBarTitles ({percent, state, error, color}) {
     }
 
     return (
-        // <div style={{paddingLeft:"2%"}}>
+        <div style={{justifyContent:"center", display:"grid"}}>
         <Row className='Bar-titles'>
-            <Col style={{width:"15vw", textAlign:"start"}}>
+            <Col style={{width:"13vw", textAlign:"start"}}>
                 <Row className='Small-black-font' style={styles[0]}>Shipment Created</Row>
                 <Row className='Black-font' style={errorStyles[0]}>{error}</Row>
             </Col>
-            <Col  style={{width:"25vw"}}>
+            <Col  style={{width:"22vw"}}>
                 <Row className='Small-black-font' style={styles[1]}>Recieved From Retailer</Row>
                 <Row className='Black-font' style={errorStyles[1]}>{error}</Row>
             </Col>
@@ -33,12 +33,12 @@ function ProgressBarTitles ({percent, state, error, color}) {
                 <Row className='Small-black-font' style={styles[2]}>Out For Delivery</Row>
                 <Row className='Black-font' style={errorStyles[2]}>{error}</Row>
             </Col>
-            <Col style={{width:"15vw", textAlign:"end"}}>
+            <Col style={{width:"13vw", textAlign:"end"}}>
                 <Row className='Small-black-font' style={styles[3]}>Delivered</Row>
                 <Row className='Black-font' style={errorStyles[3]}>{error}</Row>
             </Col>
         </Row>
-    // </div>
+     </div>
         
     );
 };

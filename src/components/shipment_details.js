@@ -6,6 +6,7 @@ function ShipmentDetails ({id,status, lastUpdate, retailer, deliveryDate, color}
     var style={color:color};
     
     return (
+        <div style={{display:'flex', justifyContent:"center"}}>
         <Row className='Details'>
             <Col>
                 <Row className='Grey-font' >Shipment Number {id}</Row>
@@ -24,7 +25,7 @@ function ShipmentDetails ({id,status, lastUpdate, retailer, deliveryDate, color}
                 <Row className='Black-font'>{deliveryDate}</Row>
             </Col>
         </Row>
-        
+        </div>
         
     );
 };
