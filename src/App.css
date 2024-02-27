@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Cairo';
   font-style: normal;
-  font-weight: 700;
   src: url('./assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf')  format('truetype');
 }
 
 .App {
   text-align: center;
+  color: rgb(43, 43, 43);
 }
 
 /* .App-logo {
@@ -23,11 +23,14 @@
 }
 
 .App-Nav{
-  display: flex;
-  justify-content: left;
-  /* max-width: 50vw; */
-  /* margin: auto; */
-  /* padding: 10px 0; */
+   height: 11vh;
+  display:flex;
+  /* flex-direction: row; */
+  align-items:center; /* align-items:flex-end; for right alignment */
+  justify-content:  flex-start;
+  font-size: calc(7px + 2vmin);
+  font-weight: 700;
+  margin: 0 10vw;
 }
 
 .App-Nav-items{
@@ -39,25 +42,40 @@
   margin-left: 4vw;
 }
 
-span {
-  width: 75px;
-  height: 75px;
-  /* background: black; */
+.App-body {
+  display:flex;
+  justify-content: center;
+  font-family: "Cairo";
+}
+
+.Grey-font{
+  color: #a7a7a7;
+  font-size: calc(3px + 2vmin);
+  font-weight: 600;
+}
+
+.Black-font{
+  font-weight: 700;
+  font-size: calc(7px + 2vmin);
+}
+
+.Details{
+  display:flex; 
+  justify-content: space-between; 
+  width:75vw;
+  margin-top: 8vh;
+  padding: 3vh;
+  border-color: rgb(243, 243, 243);
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 2px;
 }
 
 .App-header {
-  height: 11vh;
   border-bottom-width: 2px;
-  border-bottom-color: rgb(238, 238, 238);
+  border-bottom-color: rgb(243, 243, 243);
   border-bottom-style: solid;
-  display:flex;
-  /* flex-direction: row; */
-  align-items:center; /* align-items:flex-end; for right alignment */
-  justify-content:  flex-start;
-  font-size: calc(8px + 2vmin);
-  /* padding-left: 8vw; */
   font-family: 'Cairo';
-  margin: 0 10vw;
 }
 
 .App-link {
@@ -76,13 +94,13 @@ span {
 
  /* unvisited link */
 a:link {
-  color: black;
+  color: rgb(43, 43, 43);
   text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-  color: black;
+  color: rgb(43, 43, 43);
   text-decoration: none;
 
 }
