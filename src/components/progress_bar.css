@@ -23,3 +23,22 @@
     color:white;
     text-align: center;
 }
+
+.Progress-bar{
+    padding: 50px; 
+    padding-bottom: 25px;
+    display:grid;
+    flex-direction:row;
+}
+
+.Bar-titles{
+    font-weight: 650;
+    font-size: calc(2px + 2vmin);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* justify-content: space-between; */
+    /* margin-right: 3vw; */
+    /* padding-right: 1vw; */
+    /* width: 4vw; */
+}

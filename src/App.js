@@ -2,11 +2,14 @@ import './App.css';
 import NavHeader from './components/header';
 import ShipmentDetails from './components/shipment_details';
 import StepProgressBar from './components/progress_bar';
+import {Col, Row} from 'react-bootstrap';
 import * as constants from './utils/constants';
+import ProgressBarTitles from './components/progress_bar_titles';
 
 function App() {
   var status=constants.STATES[1];
   var color=constants.YELLOW_COLOR;
+  const percent = constants.PERCENTAGES[0];
   switch (status) {
     case "DELIVERED":
         status="Delivered";
@@ -27,8 +30,13 @@ function App() {
         <NavHeader/>
       </header>
       <body className='App-body'>
-        <ShipmentDetails color={color} id='15248' status={status} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
-        <StepProgressBar color={color} percent={constants.PERCENTAGES[1]}/>
+        <Col>
+          <ShipmentDetails color={color} id='15248' status={status} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
+          <Row>
+            <StepProgressBar color={color} percent={percent}/>
+            <ProgressBarTitles percent={percent}/>
+          </Row>
+        </Col>
       </body>
     </div>
   );

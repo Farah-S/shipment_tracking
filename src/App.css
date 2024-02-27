@@ -51,23 +51,11 @@
 .Grey-font{
   color: #a7a7a7;
   font-size: calc(3px + 2vmin);
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .Black-font{
-  font-weight: 700;
-  font-size: calc(7px + 2vmin);
-}
-
-.Green-font{
-  font-weight: 700;
-  color: green;
-  font-size: calc(7px + 2vmin);
-}
-
-.Red-font{
-  color: red;
-  font-weight: 700;
+  font-weight: 650;
   font-size: calc(7px + 2vmin);
 }
 
