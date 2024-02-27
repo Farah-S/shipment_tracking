@@ -1,23 +1,9 @@
 import React from 'react';
 import {Col, Row} from 'react-bootstrap';
-function ShipmentDetails ({id,status, lastUpdate, retailer, deliveryDate}) {
+function ShipmentDetails ({id,status, lastUpdate, retailer, deliveryDate, color}) {
     //status values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
-    var font='#F9BA02';
-    switch (status) {
-        case "DELIVERED":
-            status="Delivered";
-            font="green";
-            break;
-        case "CANCELLED":
-             font="red";
-            status="Cancelled";
-            break;
-        default:
-            status="Not Delivered";
-            break;
-    }
-    
-    var style={color:font};
+
+    var style={color:color};
     
     return (
         <Row className='Details'>

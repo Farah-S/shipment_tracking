@@ -43,7 +43,7 @@
 }
 
 .App-body {
-  display:flex;
+  display:grid;
   justify-content: center;
   font-family: "Cairo";
 }
