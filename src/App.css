@@ -59,6 +59,18 @@
   font-size: calc(7px + 2vmin);
 }
 
+.Green-font{
+  font-weight: 700;
+  color: green;
+  font-size: calc(7px + 2vmin);
+}
+
+.Red-font{
+  color: red;
+  font-weight: 700;
+  font-size: calc(7px + 2vmin);
+}
+
 .Details{
   display:flex; 
   justify-content: space-between; 
