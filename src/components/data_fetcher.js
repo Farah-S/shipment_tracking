@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const DataFetcher = (id) => {
+const DataFetcher = ({id}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
