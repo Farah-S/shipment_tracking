@@ -20,7 +20,7 @@ function DeliveryAddressCol({address}) {
                     <Button className='Problem-button'>Report Problem</Button>
                 </Col>
                 <Col className='Image-col'>
-                    <img src={question_mark} style={{width:"7vw"}}/>
+                    <img src={question_mark} alt='Question Mark' style={{width:"7vw"}}/>
                 </Col>
             </Row>
         </div>

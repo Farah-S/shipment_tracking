@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const DataFetcher = ({id}) => {
+const DataFetcher = async ({id}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +24,7 @@ const DataFetcher = ({id}) => {
     }
   };
 
- return data;
+ return {'data':data, 'loading':loading, 'error':error};
 };
 
 export default DataFetcher;
