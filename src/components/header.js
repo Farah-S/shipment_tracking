@@ -1,8 +1,16 @@
-import React from 'react';
+import {React,useState} from 'react';
 import enLogo from '../assets/images/bosta-en-logo.png';
 import {Navbar, Nav } from 'react-bootstrap';
+import { TextField } from '@mui/material';
+import IDSearchMenu from './id_search_menu';
 
 function NavHeader () {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>   
       <Navbar id="mainNav"  className='App-Nav'>
@@ -16,7 +24,10 @@ function NavHeader () {
             <Nav.Link href="">Contact Sales</Nav.Link>
           </Nav>
           <Nav className="App-Nav-items" style={{marginLeft:"10vw", width:"25vw"}}>
-            <Nav.Link href="">Track Shipment</Nav.Link>
+            <Nav.Link href="#" onClick={toggleMenu}>Track Shipment</Nav.Link>
+      {isMenuOpen && (
+            <IDSearchMenu/>
+          )}
             <Nav.Link href="">Login</Nav.Link>
             {/* //TODO: english/arabic */}
             <Nav.Link href="" style={{color:"red"}}>AR</Nav.Link>

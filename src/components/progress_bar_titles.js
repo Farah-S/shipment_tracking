@@ -14,7 +14,7 @@ function ProgressBarTitles ({percent, state, error, color}) {
         styles[i]['color']=GREY_COLOR;   
     }
 
-    if(error!=""){
+    if(error!==""){
         errorStyles[index]={color:RED_COLOR}; 
     }
 

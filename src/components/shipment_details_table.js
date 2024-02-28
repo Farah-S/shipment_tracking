@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 function ShipmentDetailsTable ({data}) {
 
     const tableCellSX={width:"20%", padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"rgb(70, 70, 70)", fontSize:"calc(0px + 2vmin)", fontWeight: "500", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
-    const tableHeadSX={padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"#bbc1c8", fontSize:"calc(1px + 2vmin)", fontWeight: "550", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
+    const tableHeadSX={padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"#b2b9c1", fontSize:"calc(1px + 2vmin)", fontWeight: "550", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
     
     return (
         <div style={{width:"96%", justifyContent:"left", paddingBottom:"5vh"}}>

@@ -7,7 +7,7 @@ import { faTruckFast,faDolly,faClipboard,faBox } from '@fortawesome/free-solid-s
 
 function ProgressStep({color, index, percent}) {
    
-    if(percent==100){
+    if(percent===100){
         return (
             <div>
                 <Checkmark size='20px' color={color} />
@@ -36,7 +36,7 @@ function ProgressStep({color, index, percent}) {
         var style={}
         const current = parseInt(percent/33);
         
-        if(current==index){
+        if(current===index){
             className="currentStep";
             style={backgroundColor:color, borderColor:color};
         }
