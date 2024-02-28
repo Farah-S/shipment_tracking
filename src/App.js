@@ -41,16 +41,16 @@ function App() {
         </Col>
         </Row>
         <Row className='Small-titles'>
-          <Col style={{width:"65%", fontSize:" calc(5px + 2vmin)"}} className='Black-font'>
+          <Col style={{width:"66%", fontSize:" calc(4px + 2vmin)"}} className='Black-font'>
             Shipment Details
           </Col>
-          <Col style={{width:"35%", fontSize:" calc(5px + 2vmin)"}} className='Black-font'>
+          <Col style={{width:"34%", fontSize:" calc(4px + 2vmin)"}} className='Black-font'>
             Delivery Address
           </Col>
         </Row>
         <Row>
           <Col style={{width:"66%"}}>
-          <ShipmentDetailsTable/>
+            <ShipmentDetailsTable/>
           </Col>
           <Col style={{width:"34%"}}>
           

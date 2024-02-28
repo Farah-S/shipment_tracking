@@ -1,5 +1,7 @@
 import React from 'react';
+import './shipment_details.css';
 import {Col, Row} from 'react-bootstrap';
+
 function ShipmentDetails ({id,status, lastUpdate, retailer, deliveryDate, color}) {
     //status values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
 
