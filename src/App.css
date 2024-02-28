@@ -115,3 +115,16 @@ a:visited {
 /* a:active {
   color: blue;
 }  */
+
+.menu {
+  position:absolute;
+  top: 10vh;
+  left: 66vw;
+  background-color: white;
+  padding: 0;
+  border:rgb(243, 243, 243); 
+  border-style:solid; 
+  border-radius: 5%;
+  border-width:2px;
+  text-align: left;
+}
