@@ -1,53 +1,11 @@
 .Table-head{
     background-color:  #fbfbfb;
-    /* padding: 0; */
-    /* padding-left: 1vw; */
-    font-weight: 650;
-    color: #aab2c1;
-    width:48vw;
-    border-top-left-radius: 1rem;
-    /* backgroundColor:#f7f7f7 */
-    /* font-size: calc(1px + 2vmin);
-    border: none; */
-}
-.Table-head-cell{
-    /* width:20%; */
-    /* background-color:  #f7f7f7; */
-    /* padding: 0; */
-    /* padding-left: 1vw; */
-    font-weight: 650;
-    width:20%;
-
-    color: #aab2c1;
-    
-    font-size: calc(1px + 2vmin);
-    border: none;
-}
-
-.Table-cell{
-/* width:20%; */
-    /* background-color:  #f7f7f7; */
-    padding-left: 1vw;
-    /* height: 1vh; */
-    font-weight: 600;
-    color: rgb(79, 79, 79);
-    font-size: calc(1px + 2vmin);
-    padding: 0;
-    /* padding-top: 1vh; */
-    border-bottom: rgb(243, 243, 243);
-    border-bottom-style:solid ;
-    border-left: none;
-    border-right: none;
-    /* padding-bottom: 1vh; */
 }
 
 .Table{
-    /* width:45vw;  */
-    /* width: 80%; */
     text-align:left;
     border: rgb(243, 243, 243);
     border-style: solid; 
     border-radius: 1rem;
     border-width: 2px; 
- /*     padding-left: 2vw;*/
 }

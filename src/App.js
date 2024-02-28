@@ -9,23 +9,26 @@ import ShipmentDetailsTable from './components/shipment_details_table';
 import DeliveryAddressCol from './components/delivery_address_col';
 
 function App() {
-  var status=constants.STATES[1];
+
+  var state=constants.STATES[1];
   var color=constants.YELLOW_COLOR;
   const percent = constants.PERCENTAGES[2];
-  switch (status) {
+  
+  switch (state) {
     case "DELIVERED":
-        status="Delivered";
+        state="Delivered";
         color=constants.GREEN_COLOR;
         break;
     case "CANCELLED":
         color=constants.RED_COLOR;
-        status="Cancelled";
+        state="Cancelled";
         break;
     default:
-        status="Not Delivered";
+        state="Not Delivered";
         break;
   }
-  //status values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
+
+  //state values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
   return (
     <div className="App">
       <header className='App-header'>
@@ -34,7 +37,7 @@ function App() {
       <body className='App-body'>
         <Row>
         <Col className='Grey-border'>
-          <ShipmentDetails color={color} id='15248' status={status} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
+          <ShipmentDetails color={color} id='15248' state={state} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
           <Row className='Progress-row'>
             <StepProgressBar color={color} percent={percent}/>
             <ProgressBarTitles percent={percent}/>

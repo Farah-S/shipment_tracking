@@ -8,3 +8,5 @@ export const GREEN_COLOR="#36B600";
 export const RED_COLOR="#FF0000";
 
 export const YELLOW_COLOR="#F9BA02";
+
+export const GREY_COLOR="#c9c9c9";

@@ -4,8 +4,6 @@ import {Button, Col, Row} from 'react-bootstrap';
 import question_mark from '../assets/images/question_mark.jpg';
 
 function DeliveryAddressCol({address}) {
-    //status values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
-    
     return (
         <div>
             <Row className='Address-box'>
