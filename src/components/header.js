@@ -6,7 +6,7 @@ import IDSearchMenu from './id_search_menu';
 
 function NavHeader () {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -24,10 +24,10 @@ function NavHeader () {
             <Nav.Link href="">Contact Sales</Nav.Link>
           </Nav>
           <Nav className="App-Nav-items" style={{marginLeft:"10vw", width:"25vw"}}>
-            <Nav.Link href="#" onClick={toggleMenu}>Track Shipment</Nav.Link>
-      {isMenuOpen && (
-            <IDSearchMenu/>
-          )}
+            <Nav.Link href="#" onClick={toggleMenu}>Track Shipment {isMenuOpen?">":""}</Nav.Link>
+            {isMenuOpen && (
+              <IDSearchMenu/>
+            )}
             <Nav.Link href="">Login</Nav.Link>
             {/* //TODO: english/arabic */}
             <Nav.Link href="" style={{color:"red"}}>AR</Nav.Link>
