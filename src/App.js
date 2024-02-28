@@ -6,6 +6,7 @@ import {Col, Row} from 'react-bootstrap';
 import * as constants from './utils/constants';
 import ProgressBarTitles from './components/progress_bar_titles';
 import ShipmentDetailsTable from './components/shipment_details_table';
+import DeliveryAddressCol from './components/delivery_address_col';
 
 function App() {
   var status=constants.STATES[1];
@@ -48,12 +49,12 @@ function App() {
             Delivery Address
           </Col>
         </Row>
-        <Row>
+        <Row style={{display:"flex", flexDirection:"row"}}>
           <Col style={{width:"66%"}}>
             <ShipmentDetailsTable/>
           </Col>
-          <Col style={{width:"34%"}}>
-          
+          <Col style={{width:"34%", wordWrap:"break-word"}}>
+            <DeliveryAddressCol/>
           </Col>
         </Row>
       </body>

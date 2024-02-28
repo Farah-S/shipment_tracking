@@ -1,0 +1,16 @@
+.Address-box{
+    padding: 1vh 0px; 
+    padding-left:1.5vw; 
+    color:rgb(70, 70, 70); 
+    font-size:calc(3px + 2vmin); 
+    font-weight: 500; 
+    border:rgb(243, 243, 243); 
+    border-style:solid; 
+    border-radius: 1rem;
+    border-width:2px;
+    background-color: #f9f9f9;
+    display: flex;
+    word-wrap: break-word;
+    text-align: left;
+}
+
