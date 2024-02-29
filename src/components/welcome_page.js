@@ -2,7 +2,6 @@ import {React,useState, useEffect} from 'react';
 import {Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import './id_search_menu.css';
 import {useSelector, useDispatch } from 'react-redux';
 import * as actionType from '../app/actionType';
 import Spinner from './spinner';
@@ -12,8 +11,8 @@ import './welcome_page.css';
 import '../App.css';
 import {fetchThunkShipment} from '../app/shipment_slice';
 
-function IDSearchMenu () {
- const navigate = useNavigate();
+function WelcomePage () {
+  const navigate = useNavigate();
   const [searchID, setSearchID] = useState('');
   const { data, status, error } = useSelector((state) => state.shipment);
   let content
@@ -55,18 +54,22 @@ function IDSearchMenu () {
   }
 
   return (
-    <div className="menu">   
-      <form onSubmit={handleSubmit}>
-          <Col style={{display:"flex", flexDirection:"column", margin:"4vh", marginTop:"2vh"}}>
-            <p className='Search-title'>Track your shipment</p>
-            <Row className='Search-bar-row'>
-              <input placeholder='Tracking ID' maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar"/>
-              <button type="submit" className='Search-bar-button'><FontAwesomeIcon className='Search-icon' icon={faMagnifyingGlass} /></button>
+    <body className='App-body'>
+      <Col>
+        <form onSubmit={handleSubmit}>
+          <Col className='Welcome-col'>
+            <p className='Welcome-title'>Welcome!</p>
+            <p className='Welcome-search-title'>Track your shipment!</p>
+            <Row className='Search-bar-row Welcome-Search-bar-row'>
+              <input placeholder='Tracking ID' maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
+              <button type="submit" className='Welcome-Search-bar-button'><FontAwesomeIcon className='Welcome-Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
+            {content}
           </Col>
-        </form>
-    </div>
+        </form> 
+      </Col>
+    </body>
   );
 };
 
-export default IDSearchMenu;
+export default WelcomePage;

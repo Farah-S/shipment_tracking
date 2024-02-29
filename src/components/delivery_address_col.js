@@ -9,7 +9,7 @@ function DeliveryAddressCol({address}) {
             <Row className='Address-box'>
                 <p style={{flexWrap:"wrap", width: "22vw"}}>
                     {address}
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    Customer's address
                 </p>
             </Row>
             <Row className='Problem-box'>
@@ -20,7 +20,7 @@ function DeliveryAddressCol({address}) {
                     <Button className='Problem-button'>Report Problem</Button>
                 </Col>
                 <Col className='Image-col'>
-                    <img src={question_mark} style={{width:"7vw"}}/>
+                    <img src={question_mark} alt='Question Mark' style={{width:"7vw"}}/>
                 </Col>
             </Row>
         </div>

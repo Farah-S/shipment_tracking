@@ -1,8 +1,9 @@
 import {React,useState} from 'react';
 import enLogo from '../assets/images/bosta-en-logo.png';
 import {Navbar, Nav } from 'react-bootstrap';
-import { TextField } from '@mui/material';
 import IDSearchMenu from './id_search_menu';
+import '../App.css';
+import { Outlet, Link } from "react-router-dom";
 
 function NavHeader () {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,14 +13,15 @@ function NavHeader () {
   };
 
   return (
-    <div>   
-      <Navbar id="mainNav"  className='App-Nav'>
+    <header className='App-header'>
+      <div className='header'>   
+        <Navbar id="mainNav"  className='App-Nav'>
           <Navbar.Brand href="" style={{display:"flex"}}> 
             <img className='App-logo' src={enLogo} alt="logo" />
           </Navbar.Brand>
         
           <Nav className="App-Nav-items">
-            <Nav.Link href="">Home</Nav.Link>
+            <Link to="/">Home</Link>
             <Nav.Link href="">Pricing</Nav.Link>
             <Nav.Link href="">Contact Sales</Nav.Link>
           </Nav>
@@ -32,8 +34,10 @@ function NavHeader () {
             {/* //TODO: english/arabic */}
             <Nav.Link href="" style={{color:"red"}}>AR</Nav.Link>
           </Nav>
-      </Navbar>
-    </div>   
+        </Navbar>
+      </div>  
+      <Outlet /> 
+    </header>
   );
 };
 

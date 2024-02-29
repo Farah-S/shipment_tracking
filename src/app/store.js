@@ -1,5 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
+import shipmentDataReducer  from './shipment_slice';
 
-export default configureStore({
-  reducer: {},
-})
+const store = configureStore({
+  reducer:{shipment: shipmentDataReducer},
+});
+
+export default store
