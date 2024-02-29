@@ -55,9 +55,9 @@ function WelcomePage () {
         <form onSubmit={handleSubmit}>
           <Col className='Welcome-col'>
             <p className='Welcome-title'>{t('welcome')}</p>
-            <p className='Welcome-search-title'>{t('track')} {t('your')} {t('shipment')}!</p>
+            <p className='Welcome-search-title'>{t('t_your_s')}!</p>
             <Row className='Search-bar-row Welcome-Search-bar-row'>
-              <input placeholder={t('tracking') + ' '+ t('id')} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
+              <input placeholder={t("trk_id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
               <button type="submit" className='Welcome-Search-bar-button'><FontAwesomeIcon className='Welcome-Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
             {content}

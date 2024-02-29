@@ -31,7 +31,7 @@ function IDSearchMenu () {
         content = <Spinner text={t("loading")+"..."} />
       } 
       else if (status === actionType.FETCH_DATA_SUCCESS) {
-        navigate("/tracking", {state:{data}});
+        navigate("/tracking", {state:{data, searchID}});
       } 
       else if (status === actionType.FETCH_DATA_ERROR) {
         content = <div>{error}</div>
@@ -56,7 +56,7 @@ function IDSearchMenu () {
     <div className="menu">   
       <form onSubmit={handleSubmit}>
           <Col style={{display:"flex", flexDirection:"column", margin:"4vh", marginTop:"2vh"}}>
-            <p className='Search-title'>{t("track") +" "+ t("your") +" "+ t("shipment")}</p>
+            <p className='Search-title'>{t("t_your_s")}</p>
             <Row className='Search-bar-row'>
               <input placeholder={t("tracking") + " " + t("id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar"/>
               <button type="submit" className='Search-bar-button'><FontAwesomeIcon className='Search-icon' icon={faMagnifyingGlass} /></button>

@@ -41,16 +41,16 @@ function ShipmentTrackingPage () {
     var color=constants.YELLOW_COLOR;
     switch (data['CurrentStatus']['state']) {
         case "DELIVERED":
-            currentstate=t("delivered");
+            currentstate=t("Delivered");
             color=constants.GREEN_COLOR;
             break;
         case "CANCELLED":
             color=constants.RED_COLOR;
-            currentstate=t("cancelled");
+            currentstate=t("Cancelled");
             break;
         default:
             color=constants.YELLOW_COLOR
-            currentstate=t('not_del');
+            currentstate=t('NotDelivered');
             reason=GetReason(data['TransitEvents']);
             break;
     }

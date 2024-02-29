@@ -25,7 +25,7 @@ function ProgressBarTitles ({percent, error, color}) {
         <div style={{justifyContent:"center", display:"grid"}}>
             <Row className='Bar-titles'>
                 <Col style={{width:"13vw", textAlign:"start"}}>
-                    <Row className='Small-black-font' style={styles[0]}>{t('shipment')} {t('created')}</Row>
+                    <Row className='Small-black-font' style={styles[0]}>{t('shipment_created')}</Row>
                     <Row className='Small-black-font' style={errorStyles[0]}>{error}</Row>
                 </Col>
                 <Col  style={{width:"22vw"}}>
@@ -33,7 +33,7 @@ function ProgressBarTitles ({percent, error, color}) {
                     <Row className='Small-black-font' style={errorStyles[1]}>{error}</Row>
                 </Col>
                 <Col style={{width:"22vw"}}>
-                    <Row className='Small-black-font' style={styles[2]}>{t('out_for')} {t('delivery')}</Row>
+                    <Row className='Small-black-font' style={styles[2]}>{t('out_for_del')}</Row>
                     <Row className='Small-black-font' style={errorStyles[2]}>{error}</Row>
                 </Col>
                 <Col style={{width:"13vw", textAlign:"end"}}>
