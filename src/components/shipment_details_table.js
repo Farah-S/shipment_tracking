@@ -23,62 +23,22 @@ function ShipmentDetailsTable ({data}) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
+                    {Array.from({ length: data.length }).map((_, index) => (
+                        <TableRow>
                             <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
+                               {(data[index]['hub']==null?"-":data[index]['hub'])}
                             </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
                             <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
+                                {(new Date(data[index]['timestamp'])).toLocaleDateString()}
                             </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
                             <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
+                                {(new Date(data[index]['timestamp'])).toLocaleTimeString()}
                             </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
                             <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
+                                {data[index]['reason']==null?"-":data[index]['reason']}
                             </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
-                            <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
-                            <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
-                            <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                    <TableRow>
-                        {Array.from({ length: 4 }).map((_, index) => (
-                            <TableCell sx={tableCellSX} key={index}>
-                                Table cell {index}
-                            </TableCell>
-                        ))}
-                    </TableRow>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </div>

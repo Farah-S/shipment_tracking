@@ -9,7 +9,7 @@ function DeliveryAddressCol({address}) {
             <Row className='Address-box'>
                 <p style={{flexWrap:"wrap", width: "22vw"}}>
                     {address}
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    Customer's address
                 </p>
             </Row>
             <Row className='Problem-box'>

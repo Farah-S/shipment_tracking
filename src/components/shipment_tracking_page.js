@@ -8,22 +8,51 @@ import DeliveryAddressCol from './delivery_address_col';
 import {Col, Row} from 'react-bootstrap';
 import * as constants from '../utils/constants';
 import { useLocation } from 'react-router-dom';
-
+import {currentPercentage,GetReason} from '../utils/helper';
 function ShipmentTrackingPage () {
+
     const location = useLocation();
     const data = location.state.data;
-    // var style={color:color};
-    var state=constants.STATES[1];
     var color=constants.YELLOW_COLOR;
-    const percent = constants.PERCENTAGES[2];
+    var currentstate=data['CurrentStatus']['state'];
+    const date = new Date(data['CurrentStatus']['timestamp']);
+    const formattedDate = date.toLocaleDateString();
+    var deldate = new Date(data['PromisedDate']);
+    var deliveryDate;
+    if(data['PromisedDate']==null){
+        deliveryDate ="-";
+    }else{
+         deliveryDate = deldate.toLocaleDateString();
+    }
+    const provider=data['provider'];
+    var percent=currentPercentage(data['TransitEvents']);
+    var reason=null;
+    switch (data['CurrentStatus']['state']) {
+        case "DELIVERED":
+            currentstate="Delivered";
+            color=constants.GREEN_COLOR;
+            // percent=constants.PERCENTAGES[3];
+            break;
+        case "CANCELLED":
+            color=constants.RED_COLOR;
+            // percent=constants.PERCENTAGES[3]
+            currentstate="Cancelled";
+            break;
+        default:
+            color=constants.YELLOW_COLOR
+            currentstate="Not Delivered";
+            reason=GetReason(data['TransitEvents']);
+            break;
+    }
+
     return (
         <body className='App-body'>
             <Row>
                 <Col className='Grey-border'>
-                    <ShipmentDetailsBar color={color} id='15248' state={state} lastUpdate="25/2/2022" deliveryDate="2 jan 2002" retailer="Souq.com"/>
+                    <ShipmentDetailsBar color={color} id='15248' state={currentstate} lastUpdate={formattedDate} deliveryDate={deliveryDate} retailer={provider}/>
                     <Row className='Progress-row'>
                     <StepProgressBar color={color} percent={percent}/>
-                    <ProgressBarTitles percent={percent}/>
+                    <ProgressBarTitles percent={percent} error={reason} color={color}/>
                     </Row>
                 </Col>
             </Row>
@@ -37,7 +66,7 @@ function ShipmentTrackingPage () {
             </Row>
             <Row style={{display:"flex", flexDirection:"row"}}>
                 <Col style={{width:"66%"}}>
-                <ShipmentDetailsTable/>
+                <ShipmentDetailsTable data={data['TransitEvents']}/>
                 </Col>
                 <Col style={{width:"34%", wordWrap:"break-word"}}>
                 <DeliveryAddressCol/>

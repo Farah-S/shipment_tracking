@@ -65,7 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavHeader />}>
           <Route index element={<WelcomePage />} />
-          <Route path="tracking/:state" element={<ShipmentTrackingPage color={color} />} />
+          <Route path="tracking" element={<ShipmentTrackingPage color={color} />} />
         </Route>
       </Routes>
     </BrowserRouter>

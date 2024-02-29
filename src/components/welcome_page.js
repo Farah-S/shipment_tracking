@@ -30,7 +30,7 @@ function WelcomePage () {
 
         console.log("success");
 
-        navigate("/tracking", {data:data});
+        navigate("/tracking", {state:{data}});
       } else if (status === actionType.FETCH_DATA_ERROR) {
         content = <div>{error}</div>
       }

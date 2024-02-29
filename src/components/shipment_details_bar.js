@@ -18,11 +18,11 @@ function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, colo
                     <Row className='Black-font'>{lastUpdate}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >Retailer</Row>
+                    <Row className='Grey-font' >Provider</Row>
                     <Row className='Black-font'>{retailer}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >Delivery Time Within</Row>
+                    <Row className='Grey-font' >Estimated Delivery Date</Row>
                     <Row className='Black-font'>{deliveryDate}</Row>
                 </Col>
             </Row>
