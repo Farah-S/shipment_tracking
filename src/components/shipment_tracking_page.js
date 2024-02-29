@@ -14,6 +14,7 @@ function ShipmentTrackingPage () {
 
     const location = useLocation();
     const data = location.state.data;
+    const id=location.state.searchID;
     var color=constants.YELLOW_COLOR;
     var currentstate=data['CurrentStatus']['state'];
     const date = new Date(data['CurrentStatus']['timestamp']);
@@ -50,7 +51,7 @@ function ShipmentTrackingPage () {
         <body className='App-body'>
             <Row>
                 <Col className='Grey-border'>
-                    <ShipmentDetailsBar color={color} id='15248' state={currentstate} lastUpdate={formattedDate} deliveryDate={deliveryDate} retailer={provider}/>
+                    <ShipmentDetailsBar color={color} id={id} state={currentstate} lastUpdate={formattedDate} deliveryDate={deliveryDate} retailer={provider}/>
                     <Row className='Progress-row'>
                     <StepProgressBar color={color} percent={percent}/>
                     <ProgressBarTitles percent={percent} error={reason} color={color}/>
