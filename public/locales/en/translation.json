@@ -13,7 +13,7 @@
     "number":"Number",
     "last_update":"Last Update",
     "provider":"Provider",
-    "estimated":"Estimated",
+    "estimated_del_date":"Estimated Delivery Date",
     "delivery":"Delivery",
     "shipment_created":"Shipment Created",
     "recieved_from_retailer":"Recieved From Retailer",

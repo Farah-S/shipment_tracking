@@ -13,7 +13,7 @@
     "number":"رقم",
     "last_update":"اخر تحديث",
     "provider":"اسم التاجر",
-    "estimated":"خلال",
+    "estimated_del_date":"موعد التسليم خلال",
     "delivery":"التسليم",
     "shipment_created":"تم إنشاء الشحنة",
     "recieved_from_retailer":"تم استلام الشحنة من التاجر",

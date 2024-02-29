@@ -26,7 +26,7 @@ function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, colo
                     <Row className='Black-font'>{retailer}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >{t('estimated')} {t('delivery')} {t('date')}</Row>
+                    <Row className='Grey-font' >{t('estimated_del_date')}</Row>
                     <Row className='Black-font'>{deliveryDate}</Row>
                 </Col>
             </Row>
