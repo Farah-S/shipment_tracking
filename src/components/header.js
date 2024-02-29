@@ -30,9 +30,9 @@ function NavHeader () {
   return (
     <header className='App-header'>
       <div className='header'>   
-        <Navbar id="mainNav"  className='App-Nav'>
+        <Navbar id="mainNav"  className='App-Nav' style={activeLocale=='ar'?{width:"90vw"}:{}}>
           <Navbar.Brand href="" style={{display:"flex"}}> 
-            <img className='App-logo' src={activeLocale=='ar'?arLogo:enLogo} alt="logo" />
+            <img className={activeLocale=='en'?'App-logo':'Ar-app-logo'} src={activeLocale=='ar'?arLogo:enLogo} alt="logo" />
           </Navbar.Brand>
         
           <Nav className="App-Nav-items">

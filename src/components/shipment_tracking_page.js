@@ -14,7 +14,9 @@ import '../App.css';
 function ShipmentTrackingPage () {
 
     const location = useLocation();
-    const { t } = useTranslation();
+
+    const { t, i18n} = useTranslation();
+    const activeLocale = i18n.resolvedLanguage;
 
     const data = location.state.data;
     const id = location.state.searchID;
@@ -66,7 +68,7 @@ function ShipmentTrackingPage () {
                     </Row>
                 </Col>
             </Row>
-            <Row className='Small-titles'>
+            <Row className='Small-titles' style={activeLocale=='ar'?{textAlign:'right'}:{textAlign:'left'}}>
                 <Col style={{width:"66%", fontSize:" calc(4px + 2vmin)"}} className='Black-font'>
                 {t('shipment')} {t('details')}
                 </Col>

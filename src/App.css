@@ -11,9 +11,14 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    height: auto;
-    width: 10vw;
+    height: 7vh;
+    width: auto;
     padding-right: 4vw;
+  }
+  .Ar-app-logo {
+    height: 16vh;
+    width: auto;
+    padding-right: 6vw;
   }
 }
 
@@ -22,18 +27,20 @@
   border-bottom-style: solid;
   /* border-bottom-radius: 1rem; */
   border-width: 2px;
+  justify-content: center;
+  display: flex;
 }
 
 .App-Nav{
-  
-   height: 11vh;
+  height: 11vh;
   display:flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   align-items:center; /* align-items:flex-end; for right alignment */
-  justify-content:  flex-start;
+  justify-content:  center;
   font-size: calc(6px + 2vmin);
   font-weight: 700;
   margin: 0 10vw;
+  width: 75vw;
 }
 
 .App-Nav-items{
@@ -125,16 +132,3 @@ a:visited {
 /* a:active {
   color: blue;
 }  */
-
-.menu {
-  position:absolute;
-  top: 10vh;
-  left: 66vw;
-  background-color: white;
-  padding: 0;
-  border:rgb(243, 243, 243); 
-  border-style:solid; 
-  border-radius: 5%;
-  border-width:2px;
-  text-align: left;
-}

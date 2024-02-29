@@ -22,7 +22,7 @@ function ProgressBarTitles ({percent, error, color}) {
     }
 
     return (
-        <div style={{justifyContent:"center", display:"grid"}}>
+        <div style={{justifyContent:"center", display:"grid", direction: "ltr"}}>
             <Row className='Bar-titles'>
                 <Col style={{width:"13vw", textAlign:"start"}}>
                     <Row className='Small-black-font' style={styles[0]}>{t('shipment_created')}</Row>

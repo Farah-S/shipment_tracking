@@ -14,7 +14,6 @@
   display:flex; 
   justify-content: space-between; 
   width:65vw;
-  text-align: left;
   padding-top: 2vh;
   padding-bottom: 2vh;
   padding-left: 3vw;
@@ -22,4 +21,11 @@
   border-bottom-color: rgb(243, 243, 243);
   border-bottom-style: solid;
   border-bottom-width: 2px;
+}
+
+.en{
+  text-align: left;
+}
+.ar{
+  text-align: right;
 }

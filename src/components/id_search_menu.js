@@ -10,11 +10,13 @@ import {Col, Row } from 'react-bootstrap';
 import Spinner from './spinner';
 import './id_search_menu.css';
 import './welcome_page.css';
-import '../App.css';
+// import '../App.css';
 
 function IDSearchMenu () {
   
-  const { t } = useTranslation();
+  const { t, i18n} = useTranslation();
+  const activeLocale = i18n.resolvedLanguage;
+
   const navigate = useNavigate();
   
   const [searchID, setSearchID] = useState('');
@@ -53,12 +55,12 @@ function IDSearchMenu () {
   }
 
   return (
-    <div className="menu">   
+    <div className='menu' style={activeLocale=='ar'?{left: "20vw", textAlign:"right"}:{left: "64vw"}}>   
       <form onSubmit={handleSubmit}>
-          <Col style={{display:"flex", flexDirection:"column", margin:"4vh", marginTop:"2vh"}}>
+          <Col className='Search-col'>
             <p className='Search-title'>{t("t_your_s")}</p>
             <Row className='Search-bar-row'>
-              <input placeholder={t("tracking") + " " + t("id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar"/>
+              <input placeholder={t("trk_id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className={activeLocale=='ar'?'small-ar-search-bar': "small-en-search-bar"}/>
               <button type="submit" className='Search-bar-button'><FontAwesomeIcon className='Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
           </Col>
