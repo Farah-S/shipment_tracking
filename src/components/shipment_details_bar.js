@@ -1,14 +1,14 @@
 import React from 'react';
-import './shipment_details.css';
+import './shipment_details_bar.css';
 import {Col, Row} from 'react-bootstrap';
 
-function ShipmentDetails ({id,state, lastUpdate, retailer, deliveryDate, color}) {
+function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, color}) {
 
     var style={color:color};
     
     return (
         <div style={{display:'flex', justifyContent:"center"}}>
-            <Row className='Details'>
+                <Row className='Details'>
                 <Col>
                     <Row className='Grey-font' >Shipment Number {id}</Row>
                     <Row className='Black-font' style={style}>{state}</Row>
@@ -30,4 +30,4 @@ function ShipmentDetails ({id,state, lastUpdate, retailer, deliveryDate, color})
     );
 };
 
-export default ShipmentDetails;
+export default ShipmentDetailsBar;

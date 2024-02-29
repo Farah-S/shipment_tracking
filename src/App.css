@@ -40,7 +40,7 @@
 .App-body {
   display:grid;
   margin-top: 6vh;
-  
+  height: 82vh;
   justify-content: center;
   font-family: Cairo;
 }
