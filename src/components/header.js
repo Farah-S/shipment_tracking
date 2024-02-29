@@ -13,7 +13,7 @@ function NavHeader () {
     setMenuOpen(!isMenuOpen);
   };
 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const activeLocale = i18n.resolvedLanguage; 
 
   const handleClick = (event) => {
@@ -35,17 +35,16 @@ function NavHeader () {
           </Navbar.Brand>
         
           <Nav className="App-Nav-items">
-            <Link to="/">Home</Link>
-            <Nav.Link href="">Pricing</Nav.Link>
-            <Nav.Link href="">Contact Sales</Nav.Link>
+            <Link to="/">{t("home")}</Link>
+            <Nav.Link href="">{t("pricing")}</Nav.Link>
+            <Nav.Link href="">{t("contact_sales")}</Nav.Link>
           </Nav>
           <Nav className="App-Nav-items" style={{marginLeft:"10vw", width:"25vw"}}>
-            <Nav.Link href="#" onClick={toggleMenu}>Track Shipment {isMenuOpen?">":""}</Nav.Link>
+            <Nav.Link href="#" onClick={toggleMenu}>{t("track")} {t("shipment")} {isMenuOpen?">":""}</Nav.Link>
             {isMenuOpen && (
               <IDSearchMenu/>
             )}
-            <Nav.Link href="">Login</Nav.Link>
-            {/* //TODO: english/arabic */}
+            <Nav.Link href="">{t("login")}</Nav.Link>
             <Nav.Link href="" style={{color:"red"}} onClick={handleClick}>{activeLocale=='ar'?'ENG':'AR'}</Nav.Link>
           </Nav>
         </Navbar>

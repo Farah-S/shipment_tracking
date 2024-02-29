@@ -5,6 +5,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import {React,useState, useEffect} from 'react';
 import * as actionType from '../app/actionType';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {Col, Row } from 'react-bootstrap';
 import Spinner from './spinner';
 import './id_search_menu.css';
@@ -12,20 +13,25 @@ import './welcome_page.css';
 import '../App.css';
 
 function IDSearchMenu () {
- const navigate = useNavigate();
+  
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  
   const [searchID, setSearchID] = useState('');
-  const { data, status, error } = useSelector((state) => state.shipment);
-  let content
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  
+  const { data, status, error } = useSelector((state) => state.shipment);
+  
+  let content=<div>{error}</div>
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (isDataLoaded) {
       if (status === actionType.FETCH_DATA_LOADING) {  
-        content = <Spinner text="Loading..." />
+        content = <Spinner text={t("loading")+"..."} />
       } 
       else if (status === actionType.FETCH_DATA_SUCCESS) {
-        navigate("/tracking", {state:{data}});
+        navigate("/tracking", {state:{data, searchID}});
       } 
       else if (status === actionType.FETCH_DATA_ERROR) {
         content = <div>{error}</div>
@@ -50,9 +56,9 @@ function IDSearchMenu () {
     <div className="menu">   
       <form onSubmit={handleSubmit}>
           <Col style={{display:"flex", flexDirection:"column", margin:"4vh", marginTop:"2vh"}}>
-            <p className='Search-title'>Track your shipment</p>
+            <p className='Search-title'>{t("t_your_s")}</p>
             <Row className='Search-bar-row'>
-              <input placeholder='Tracking ID' maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar"/>
+              <input placeholder={t("tracking") + " " + t("id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar"/>
               <button type="submit" className='Search-bar-button'><FontAwesomeIcon className='Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
           </Col>

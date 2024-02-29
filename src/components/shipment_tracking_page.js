@@ -5,6 +5,7 @@ import DeliveryAddressCol from './delivery_address_col';
 import ProgressBarTitles from './progress_bar_titles';
 import * as constants from '../utils/constants';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import StepProgressBar from './progress_bar';
 import {Col, Row} from 'react-bootstrap';
 import React from 'react';
@@ -13,36 +14,43 @@ import '../App.css';
 function ShipmentTrackingPage () {
 
     const location = useLocation();
+    const { t } = useTranslation();
+
     const data = location.state.data;
-    const id=location.state.searchID;
-    var color=constants.YELLOW_COLOR;
+    const id = location.state.searchID;
+    
     var currentstate=data['CurrentStatus']['state'];
+    
     const date = new Date(data['CurrentStatus']['timestamp']);
     const formattedDate = date.toLocaleDateString();
+    
     var deldate = new Date(data['PromisedDate']);
     var deliveryDate;
+    
     if(data['PromisedDate']==null){
         deliveryDate ="-";
     }else{
-         deliveryDate = deldate.toLocaleDateString();
+        deliveryDate = deldate.toLocaleDateString();
     }
+    
     const provider=data['provider'];
+    
     var percent=currentPercentage(data['TransitEvents']);
+    
     var reason=null;
+    var color=constants.YELLOW_COLOR;
     switch (data['CurrentStatus']['state']) {
         case "DELIVERED":
-            currentstate="Delivered";
+            currentstate=t("Delivered");
             color=constants.GREEN_COLOR;
-            // percent=constants.PERCENTAGES[3];
             break;
         case "CANCELLED":
             color=constants.RED_COLOR;
-            // percent=constants.PERCENTAGES[3]
-            currentstate="Cancelled";
+            currentstate=t("Cancelled");
             break;
         default:
             color=constants.YELLOW_COLOR
-            currentstate="Not Delivered";
+            currentstate=t('NotDelivered');
             reason=GetReason(data['TransitEvents']);
             break;
     }
@@ -60,18 +68,18 @@ function ShipmentTrackingPage () {
             </Row>
             <Row className='Small-titles'>
                 <Col style={{width:"66%", fontSize:" calc(4px + 2vmin)"}} className='Black-font'>
-                Shipment Details
+                {t('shipment')} {t('details')}
                 </Col>
                 <Col style={{width:"34%", fontSize:" calc(4px + 2vmin)"}} className='Black-font'>
-                Delivery Address
+                {t('delivery')} {t('address')}
                 </Col>
             </Row>
             <Row style={{display:"flex", flexDirection:"row"}}>
                 <Col style={{width:"66%"}}>
-                <ShipmentDetailsTable data={data['TransitEvents']}/>
+                    <ShipmentDetailsTable data={data['TransitEvents']}/>
                 </Col>
                 <Col style={{width:"34%", wordWrap:"break-word"}}>
-                <DeliveryAddressCol/>
+                    <DeliveryAddressCol/>
                 </Col>
             </Row>
         </body>  
