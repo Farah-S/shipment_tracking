@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import {Col, Row } from 'react-bootstrap';
 import Spinner from './spinner';
 import './id_search_menu.css';
-import './id_search_menu.css';
 import './welcome_page.css';
 import '../App.css';
 

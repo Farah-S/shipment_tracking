@@ -1,5 +1,6 @@
 import enLogo from '../assets/images/bosta-en-logo.png';
 import { Outlet, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {Navbar, Nav } from 'react-bootstrap';
 import IDSearchMenu from './id_search_menu';
 import {React,useState} from 'react';
@@ -11,6 +12,19 @@ function NavHeader () {
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+
+  const { i18n } = useTranslation();
+  const activeLocale = i18n.resolvedLanguage; 
+
+  const handleClick = (event) => {
+    // setSearchID(event.target.value);
+    if(activeLocale=='ar'){
+      i18n.changeLanguage("en");
+    }
+    else{
+      i18n.changeLanguage("ar");  
+    }
+  }
 
   return (
     <header className='App-header'>
@@ -32,7 +46,7 @@ function NavHeader () {
             )}
             <Nav.Link href="">Login</Nav.Link>
             {/* //TODO: english/arabic */}
-            <Nav.Link href="" style={{color:"red"}}>AR</Nav.Link>
+            <Nav.Link href="" style={{color:"red"}} onClick={handleClick}>{activeLocale=='ar'?'ENG':'AR'}</Nav.Link>
           </Nav>
         </Navbar>
       </div>  

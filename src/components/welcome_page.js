@@ -25,7 +25,7 @@ function WelcomePage () {
         content = <Spinner text="Loading..." />
       } 
       else if (status === actionType.FETCH_DATA_SUCCESS) {
-        navigate("/tracking", {state:{data}});
+        navigate("/tracking", {state:{data, searchID}});
       } 
       else if (status === actionType.FETCH_DATA_ERROR) {
         content = <p>{error}</p>

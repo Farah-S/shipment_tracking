@@ -1,16 +1,16 @@
 # Shimpent Tracker
 
-Project was created using ReactJS, it consists of a webpage used to track package shipment using an ID.
+Project was created using ReactJS and React-Redux, it consists of a webpage used to track package shipment using an ID.
 
 ## UI
 
 Below is a look at the latest version of the Home page UI
 
-![UI](https://github.com/Farah-S/shipment_tracking/blob/master/src/assets/images/home.png)
+![HomeUI](https://github.com/Farah-S/shipment_tracking/blob/master/src/assets/images/home.png)
 
 Below is a look at the latest version of the tracking page UI
 
-![UI](https://github.com/Farah-S/shipment_tracking/blob/master/src/assets/images/latest.png)
+![TrackingUI](https://github.com/Farah-S/shipment_tracking/blob/master/src/assets/images/latest.png)
 
 ## How To Use
 
