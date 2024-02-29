@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './app/store'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import store from './app/store';
+import React from 'react';
+import "./i18n/config.ts";
+import App from './App';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <App />
+    </React.Suspense>
   </Provider>
 );
 
