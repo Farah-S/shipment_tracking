@@ -14,7 +14,7 @@ function NavHeader () {
 
   return (
     <header className='App-header'>
-      <div>   
+      <div className='header'>   
         <Navbar id="mainNav"  className='App-Nav'>
           <Navbar.Brand href="" style={{display:"flex"}}> 
             <img className='App-logo' src={enLogo} alt="logo" />
@@ -22,7 +22,7 @@ function NavHeader () {
         
           <Nav className="App-Nav-items">
             <Link to="/">Home</Link>
-            <Link to="/tracking">Pricing</Link>
+            <Nav.Link href="">Pricing</Nav.Link>
             <Nav.Link href="">Contact Sales</Nav.Link>
           </Nav>
           <Nav className="App-Nav-items" style={{marginLeft:"10vw", width:"25vw"}}>

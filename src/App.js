@@ -28,23 +28,22 @@ function App() {
   const [data, setData] = useState([]);
   // setData(dispatch(dataReducer()))
 
-  var state=constants.STATES[1];
-  var color=constants.YELLOW_COLOR;
-  const percent = constants.PERCENTAGES[2];
+  // var state=constants.STATES[1];
+  // var color=constants.YELLOW_COLOR;
   
-  switch (state) {
-    case "DELIVERED":
-        state="Delivered";
-        color=constants.GREEN_COLOR;
-        break;
-    case "CANCELLED":
-        color=constants.RED_COLOR;
-        state="Cancelled";
-        break;
-    default:
-        state="Not Delivered";
-        break;
-  }
+  // switch (state) {
+  //   case "DELIVERED":
+  //       state="Delivered";
+  //       color=constants.GREEN_COLOR;
+  //       break;
+  //   case "CANCELLED":
+  //       color=constants.RED_COLOR;
+  //       state="Cancelled";
+  //       break;
+  //   default:
+  //       state="Not Delivered";
+  //       break;
+  // }
 {/* <div className="App">
        <header className='App-header'>
           <NavHeader/>
@@ -56,7 +55,7 @@ function App() {
         </body>
       </div> */}
 
-  state=FETCH_DATA_IDLE;
+  // state=FETCH_DATA_IDLE;
   // if(state===FETCH_DATA_IDLE){
     //state values: DELIVERED_TO_SENDER, DELIVERED, CANCELLED
     return (
@@ -65,7 +64,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavHeader />}>
           <Route index element={<WelcomePage />} />
-          <Route path="tracking" element={<ShipmentTrackingPage color={color} />} />
+          <Route path="tracking" element={<ShipmentTrackingPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>

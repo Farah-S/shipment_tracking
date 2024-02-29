@@ -17,7 +17,15 @@
   }
 }
 
+.header{
+  border-bottom-color: rgb(243, 243, 243);
+  border-bottom-style: solid;
+  /* border-bottom-radius: 1rem; */
+  border-width: 2px;
+}
+
 .App-Nav{
+  
    height: 11vh;
   display:flex;
   /* flex-direction: row; */
