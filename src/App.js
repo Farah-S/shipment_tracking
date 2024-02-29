@@ -6,7 +6,7 @@ import * as constants from './utils/constants';
 import ProgressBarTitles from './components/progress_bar_titles';
 import ShipmentTrackingPage from './components/shipment_tracking_page';
 import DeliveryAddressCol from './components/delivery_address_col';
-import { selectData } from './app/shipment_slice';
+// import { selectData } from './app/shipment_slice';
 import {useSelector, useDispatch } from 'react-redux';
 import store from './app/store';
 import ReactDOM from "react-dom/client";
@@ -23,7 +23,7 @@ import {FETCH_DATA_IDLE} from './app/actionType';
 function App() {
 
   // const dataSelector = selectData(store.getState());
-  const shipment = useSelector(selectData);
+  // const shipment = useSelector(selectData);
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   // setData(dispatch(dataReducer()))
@@ -65,7 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavHeader />}>
           <Route index element={<WelcomePage />} />
-          <Route path="tracking" element={<ShipmentTrackingPage color={color} />} />
+          <Route path="tracking/:state" element={<ShipmentTrackingPage color={color} />} />
         </Route>
       </Routes>
     </BrowserRouter>

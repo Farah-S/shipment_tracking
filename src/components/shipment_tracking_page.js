@@ -7,9 +7,11 @@ import ShipmentDetailsTable from './shipment_details_table';
 import DeliveryAddressCol from './delivery_address_col';
 import {Col, Row} from 'react-bootstrap';
 import * as constants from '../utils/constants';
+import { useLocation } from 'react-router-dom';
 
-function ShipmentTrackingPage ({id,state, lastUpdate, retailer, deliveryDate, color}) {
-
+function ShipmentTrackingPage () {
+    const location = useLocation();
+    const data = location.state.data;
     // var style={color:color};
     var state=constants.STATES[1];
     var color=constants.YELLOW_COLOR;

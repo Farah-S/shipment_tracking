@@ -1,15 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
-import shipmentReducer  from './shipment_slice';
+import shipmentDataReducer  from './shipment_slice';
 // import filtersReducer from './features/filters/filtersSlice'
-import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, nanoid, applyMiddleware  } from '@reduxjs/toolkit'
+import {thunk} from 'redux-thunk'; 
 // import { client } from '../../api/client'
 
+// const store = configureStore({
+//   reducer: {
+//     shipment: shipmentDataReducer
+//   },
+// })
 const store = configureStore({
-  reducer: {
-    shipment: shipmentReducer
-  },
-})
-
+  reducer:{shipment: shipmentDataReducer},
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+});
+// const store = configureStore(shipmentDataReducer, applyMiddleware(thunk));
 
 
 

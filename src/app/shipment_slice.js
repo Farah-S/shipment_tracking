@@ -1,75 +1,86 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import { FETCH_DATA_LOADING, FETCH_DATA_IDLE,FETCH_DATA_SUCCESS, FETCH_DATA_ERROR } from './actionType';
-import dataReducer from './reducers';
+import {fetchShipment} from './actions';
 
 
     
-export const fetchShipment = createAsyncThunk('shipment', async (id) => {
+export const  fetchThunkShipment = createAsyncThunk('shipment/fetchThunkShipment', async (id, thunkAPI) => {
   
-// try {
+try {
       const response = await fetch('https://tracking.bosta.co/shipments/track/'+id); // Replace with your API endpoint
-    //   if (!response.ok) {
-    //     throw new Error('Network response was not ok.');
-    //   }
-    //   const data = await response.json();
-    //   // setData(data);
-    //   // setLoading(false);
-    // } catch (error) {
-    //   setError(error.message);
-    //   setLoading(false);
-    // }
-  return response.data
+      if (!response.ok) {
+         throw new Error('Network response was not ok.');
+      }
+      const data = await response.json();
+      console.log("thunk");
+      
+      // setData(data);
+      // setLoading(false);
+      return data;
+    } catch (error) {
+      console.log("thunk err");
+       return thunkAPI.rejectWithValue(error.message); 
+    }
 })
 
-export const shipmentSlice = createSlice({
-  name: 'shipment',
-  initialState: {
+var initialState={
     data: [],
     status: FETCH_DATA_IDLE,
     error: null,
-  },
-  reducers: {
-    dataReducer: (state, action) => {
-      switch (action.type) {
-        case FETCH_DATA_LOADING:
-          return {
-            ...state,
-            loading: true,
-            error: null,
-          };
-        case FETCH_DATA_SUCCESS:
-          return {
-            ...state,
-            loading: false,
-            data: action.payload,
-          };
-        case FETCH_DATA_ERROR:
-          return {
-            ...state,
-            loading: false,
-            error: action.payload,
-          };
-        default:
-          return state;
-      }
-    },
-    extraReducers(builder) {
-    builder
-      .addCase(fetchShipment.pending, (state, action) => {
-        state.status = FETCH_DATA_LOADING
+  };
+
+export const shipmentSlice = createSlice({
+  name: 'shipment',
+  initialState: initialState,
+  reducers: {},
+    //  shipmentDataReducer:(state = initialState, action) =>{
+    //   // var foundIndex = 0;
+    //   // var foundIndexCart = 0;
+    //   // var { item, cart, total } = state;
+    //       console.log("reducer");
+
+    //   switch (action.type) {
+    //     case FETCH_DATA_LOADING:
+    //       return {
+    //         ...state,
+    //         status: FETCH_DATA_LOADING,
+    //         error: null
+    //       };
+    //     case FETCH_DATA_SUCCESS:
+    //       return {
+    //         ...state,
+    //         status: FETCH_DATA_SUCCESS,
+    //         data: action.data
+    //       };
+    //     case FETCH_DATA_ERROR:
+    //       return {
+    //         ...state,
+    //         status: FETCH_DATA_ERROR,
+    //         error: action.payload.error,
+    //         data: []
+    //       };
+    //   }
+    // },
+    extraReducers:(builder) =>{
+      
+      console.log("exreducer");
+      builder.addCase(fetchThunkShipment.pending, (state, action) => {
+        state.status = FETCH_DATA_LOADING;
       })
-      .addCase(fetchShipment.fulfilled, (state, action) => {
-        state.status = FETCH_DATA_SUCCESS
+      .addCase(fetchThunkShipment.fulfilled, (state, action) => {
+        console.log("exreducer");
+        state.status = FETCH_DATA_SUCCESS;
         // Add any fetched posts to the array
         state.data = action.payload;
       })
-      .addCase(fetchShipment.rejected, (state, action) => {
-        state.status = FETCH_DATA_ERROR
-        state.error = action.error.message
+      .addCase(fetchThunkShipment.rejected, (state, action) => {
+        console.log("exreducer error");
+        state.status = FETCH_DATA_ERROR;
+        state.error = action.error.message;
       })
     },
   },
-})
+)
 
 // export const { increment, decrement, incrementByAmount } = shipmentSlice.actions
 
@@ -89,5 +100,5 @@ export const shipmentSlice = createSlice({
 export const selectData = (state) => state.shipment.data;
 export const selectError = (state) => state.shipment.error;
 export const selectStatus = (state) => state.shipment.status;
-
+// export const  shipmentActions = shipmentSlice.actions;
 export default shipmentSlice.reducer
