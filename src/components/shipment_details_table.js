@@ -9,10 +9,12 @@ import React from 'react';
 
 function ShipmentDetailsTable ({data}) {
 
-    const { t } = useTranslation();
+    const { t, i18n} = useTranslation();
+    const activeLocale = i18n.resolvedLanguage;
 
-    const tableCellSX={width:"20%", padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"rgb(70, 70, 70)", fontSize:"calc(0px + 2vmin)", fontWeight: "500", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
-    const tableHeadSX={padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"#b2b9c1", fontSize:"calc(1px + 2vmin)", fontWeight: "550", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
+    const align=(activeLocale=='ar'?"right":"left");
+    const tableCellSX={textAlign:align,width:"20%", padding: "1vh 0px", paddingLeft:"1.5vw", paddingRight:"1.5vw",height:"5vh", color:"rgb(70, 70, 70)", fontSize:"calc(0px + 2vmin)", fontWeight: "500", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
+    const tableHeadSX={textAlign:align, padding: "1vh 0px", paddingLeft:"1.5vw",paddingRight:"1.5vw", height:"5vh", color:"#b2b9c1", fontSize:"calc(1px + 2vmin)", fontWeight: "550", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
     
     return (
         <div style={{width:"96%", justifyContent:"left", paddingBottom:"5vh"}}>

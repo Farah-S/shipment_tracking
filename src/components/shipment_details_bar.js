@@ -5,13 +5,14 @@ import React from 'react';
 
 function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, color}) {
 
-    const { t } = useTranslation();
+    const { t, i18n} = useTranslation();
+    const activeLocale = i18n.resolvedLanguage;
 
     var style={color:color};
     
     return (
         <div style={{display:'flex', justifyContent:"center"}}>
-                <Row className='Details'>
+            <Row className={'Details '+(activeLocale=='ar'?"ar":'en')}>
                 <Col>
                     <Row className='Grey-font' >{t('shipment')} {t('number')} {id}</Row>
                     <Row className='Black-font' style={style}>{state}</Row>

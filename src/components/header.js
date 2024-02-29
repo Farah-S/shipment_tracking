@@ -1,4 +1,5 @@
 import enLogo from '../assets/images/bosta-en-logo.png';
+import arLogo from '../assets/images/bosta-ar-logo.png';
 import { Outlet, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {Navbar, Nav } from 'react-bootstrap';
@@ -29,9 +30,9 @@ function NavHeader () {
   return (
     <header className='App-header'>
       <div className='header'>   
-        <Navbar id="mainNav"  className='App-Nav'>
+        <Navbar id="mainNav"  className='App-Nav' style={activeLocale=='ar'?{width:"90vw"}:{}}>
           <Navbar.Brand href="" style={{display:"flex"}}> 
-            <img className='App-logo' src={enLogo} alt="logo" />
+            <img className={activeLocale=='en'?'App-logo':'Ar-app-logo'} src={activeLocale=='ar'?arLogo:enLogo} alt="logo" />
           </Navbar.Brand>
         
           <Nav className="App-Nav-items">

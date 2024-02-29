@@ -13,13 +13,19 @@ import './welcome_page.css';
 import '../App.css';
 
 function WelcomePage () {
-  const { t } = useTranslation();
+
+  const { t, i18n} = useTranslation();
+  const activeLocale = i18n.resolvedLanguage;
+  
   const navigate = useNavigate();
+  
   const [searchID, setSearchID] = useState('');
-  const { data, status, error } = useSelector((state) => state.shipment);
-  let content=<p>{error}</p>;
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  
+  const { data, status, error } = useSelector((state) => state.shipment);
   const dispatch = useDispatch();
+  
+  let content=<p>{error}</p>;
   
   useEffect(() => {
     if (isDataLoaded) {
@@ -57,8 +63,8 @@ function WelcomePage () {
             <p className='Welcome-title'>{t('welcome')}</p>
             <p className='Welcome-search-title'>{t('t_your_s')}!</p>
             <Row className='Search-bar-row Welcome-Search-bar-row'>
-              <input placeholder={t("trk_id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
-              <button type="submit" className='Welcome-Search-bar-button'><FontAwesomeIcon className='Welcome-Search-icon' icon={faMagnifyingGlass} /></button>
+              <input placeholder={t("trk_id")} maxLength={25} onChange={handleChange} value={searchID} id="id" className={"Search-bar " + (activeLocale=='ar'?"ar-search-bar":"en-search-bar")}/>
+              <button type="submit" className={(activeLocale=='ar'?"ar-search-button":"en-search-button")}><FontAwesomeIcon className='Welcome-Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
             {content}
           </Col>
