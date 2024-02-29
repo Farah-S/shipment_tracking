@@ -14,6 +14,6 @@ Below is a look at the latest version of the tracking page UI
 
 ## How To Use
 
-Clone the repo and run 'npm start' in the project root directory and open 'http://localhost:3000/' in any browser. 
+Clone the repo and run 'npm install' then run 'npm start' in the project root directory and open 'http://localhost:3000/' in any browser. 
 
 Paste your desired ID in the textbox. The application will then fetch data from the Bosta API and display your shipment details, you can click on "Home" to return to the original page or click on "Track Shipment" to  look up another ID.
