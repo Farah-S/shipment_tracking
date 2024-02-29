@@ -1,4 +1,4 @@
-# Shimpent Tracker
+# Shipment Tracker
 
 Project was created using ReactJS and React-Redux, it consists of a webpage used to track package shipment using an ID.
 
