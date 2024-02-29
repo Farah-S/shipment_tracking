@@ -1,12 +1,15 @@
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
+import { useTranslation } from "react-i18next";
 import TableRow from '@mui/material/TableRow';
 import Table from '@mui/material/Table';
 import './shipment_details_table.css';
 import React from 'react';
 
 function ShipmentDetailsTable ({data}) {
+
+    const { t } = useTranslation();
 
     const tableCellSX={width:"20%", padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"rgb(70, 70, 70)", fontSize:"calc(0px + 2vmin)", fontWeight: "500", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
     const tableHeadSX={padding: "1vh 0px", paddingLeft:"1.5vw", height:"5vh", color:"#b2b9c1", fontSize:"calc(1px + 2vmin)", fontWeight: "550", borderBottom:"rgb(243, 243, 243)", borderBottomStyle:"solid", borderBottomWidth:"2px"};
@@ -16,10 +19,10 @@ function ShipmentDetailsTable ({data}) {
             <Table sx={{padding:"0", borderCollapse:"initial" }} className='Table'>
                 <TableHead className='Table-head' style={{}}>
                     <TableRow>
-                        <TableCell sx={tableHeadSX}>Branch</TableCell>
-                        <TableCell sx={tableHeadSX}>Date</TableCell>
-                        <TableCell sx={tableHeadSX}>Time</TableCell>
-                        <TableCell sx={tableHeadSX} style={{width:"40%"}}>Details</TableCell>
+                        <TableCell sx={tableHeadSX}>{t('branch')}</TableCell>
+                        <TableCell sx={tableHeadSX}>{t('date')}</TableCell>
+                        <TableCell sx={tableHeadSX}>{t('time')}</TableCell>
+                        <TableCell sx={tableHeadSX} style={{width:"40%"}}>{t('details')}</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

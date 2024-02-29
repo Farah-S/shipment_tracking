@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import {Col, Row} from 'react-bootstrap';
 import './shipment_details_bar.css';
 import React from 'react';
 
 function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, color}) {
+
+    const { t } = useTranslation();
 
     var style={color:color};
     
@@ -10,19 +13,19 @@ function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, colo
         <div style={{display:'flex', justifyContent:"center"}}>
                 <Row className='Details'>
                 <Col>
-                    <Row className='Grey-font' >Shipment Number {id}</Row>
+                    <Row className='Grey-font' >{t('shipment')} {t('number')} {id}</Row>
                     <Row className='Black-font' style={style}>{state}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >Last Update</Row>
+                    <Row className='Grey-font' >{t('last_update')}</Row>
                     <Row className='Black-font'>{lastUpdate}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >Provider</Row>
+                    <Row className='Grey-font' >{t('provider')}</Row>
                     <Row className='Black-font'>{retailer}</Row>
                 </Col>
                 <Col>
-                    <Row className='Grey-font' >Estimated Delivery Date</Row>
+                    <Row className='Grey-font' >{t('estimated')} {t('delivery')} {t('date')}</Row>
                     <Row className='Black-font'>{deliveryDate}</Row>
                 </Col>
             </Row>

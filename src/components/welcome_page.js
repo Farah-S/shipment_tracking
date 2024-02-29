@@ -5,6 +5,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import {React,useState, useEffect} from 'react';
 import * as actionType from '../app/actionType';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {Col, Row } from 'react-bootstrap';
 import Spinner from './spinner';
 import './id_search_menu.css';
@@ -12,6 +13,7 @@ import './welcome_page.css';
 import '../App.css';
 
 function WelcomePage () {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchID, setSearchID] = useState('');
   const { data, status, error } = useSelector((state) => state.shipment);
@@ -52,10 +54,10 @@ function WelcomePage () {
       <Col>
         <form onSubmit={handleSubmit}>
           <Col className='Welcome-col'>
-            <p className='Welcome-title'>Welcome!</p>
-            <p className='Welcome-search-title'>Track your shipment!</p>
+            <p className='Welcome-title'>{t('welcome')}</p>
+            <p className='Welcome-search-title'>{t('track')} {t('your')} {t('shipment')}!</p>
             <Row className='Search-bar-row Welcome-Search-bar-row'>
-              <input placeholder='Tracking ID' maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
+              <input placeholder={t('tracking') + ' '+ t('id')} maxLength={25} onChange={handleChange} value={searchID} id="id" className="Search-bar Welcome-bar"/>
               <button type="submit" className='Welcome-Search-bar-button'><FontAwesomeIcon className='Welcome-Search-icon' icon={faMagnifyingGlass} /></button>
             </Row>
             {content}

@@ -12,15 +12,14 @@ function App() {
   
     return (
       <div className="App">
-        {/* {t("hello_world")} */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<NavHeader />}>
-            <Route index element={<WelcomePage />} />
-            <Route path="tracking" element={<ShipmentTrackingPage/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<NavHeader />}>
+              <Route index element={<WelcomePage />} />
+              <Route path="tracking" element={<ShipmentTrackingPage/>} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </div>
     );
 }
