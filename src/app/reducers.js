@@ -1,4 +1,4 @@
-import { FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from './actions';
+import { FETCH_DATA_LOADING, FETCH_DATA_SUCCESS, FETCH_DATA_ERROR } from './actionType';
 
 const initialState = {
   data: [],
@@ -8,7 +8,7 @@ const initialState = {
 
 const dataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_DATA_REQUEST:
+    case FETCH_DATA_LOADING:
       return {
         ...state,
         loading: true,
@@ -20,7 +20,7 @@ const dataReducer = (state = initialState, action) => {
         loading: false,
         data: action.payload,
       };
-    case FETCH_DATA_FAILURE:
+    case FETCH_DATA_ERROR:
       return {
         ...state,
         loading: false,

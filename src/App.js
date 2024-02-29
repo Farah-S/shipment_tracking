@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from 'react';
 import NavHeader from './components/header';
 import ShipmentDetails from './components/shipment_details';
 import StepProgressBar from './components/progress_bar';
@@ -7,8 +8,23 @@ import * as constants from './utils/constants';
 import ProgressBarTitles from './components/progress_bar_titles';
 import ShipmentDetailsTable from './components/shipment_details_table';
 import DeliveryAddressCol from './components/delivery_address_col';
-
+import { selectData } from './app/shipment_slice';
+import {useSelector, useDispatch } from 'react-redux';
+import store from './app/store';
+// import { Provider } from "react-redux";
+// import { applyMiddleware } from "redux";
+// import {thunk} from "redux-thunk";
+// import rootReducer from "./app/rootReducers";
+// import { configureStore } from '@reduxjs/toolkit';
+// import reducer from "./app/reducers.js";
+// const store = configureStore( reducer, applyMiddleware(thunk));
 function App() {
+
+  // const dataSelector = selectData(store.getState());
+  const shipment = useSelector(selectData);
+  const dispatch = useDispatch();
+  const [data, setData] = useState([]);
+  // setData(dispatch(dataReducer()))
 
   var state=constants.STATES[1];
   var color=constants.YELLOW_COLOR;
