@@ -1,14 +1,15 @@
-import React from 'react';
-import '../App.css';
-import ShipmentDetailsBar from './shipment_details_bar';
-import StepProgressBar from './progress_bar';
-import ProgressBarTitles from './progress_bar_titles';
 import ShipmentDetailsTable from './shipment_details_table';
+import {currentPercentage,GetReason} from '../utils/helper';
+import ShipmentDetailsBar from './shipment_details_bar';
 import DeliveryAddressCol from './delivery_address_col';
-import {Col, Row} from 'react-bootstrap';
+import ProgressBarTitles from './progress_bar_titles';
 import * as constants from '../utils/constants';
 import { useLocation } from 'react-router-dom';
-import {currentPercentage,GetReason} from '../utils/helper';
+import StepProgressBar from './progress_bar';
+import {Col, Row} from 'react-bootstrap';
+import React from 'react';
+import '../App.css';
+
 function ShipmentTrackingPage () {
 
     const location = useLocation();

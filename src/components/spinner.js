@@ -9,5 +9,3 @@ export default function Spinner({ text = '', size = '5em' }) {
     </div>
   )
 }
-
-// export default Spinner;

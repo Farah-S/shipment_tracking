@@ -1,9 +1,9 @@
-import {React} from "react";
-import "react-step-progress-bar/styles.css";
-import './progress_bar.css';
-import { Checkmark } from 'react-checkmark';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckFast,faDolly,faClipboard,faBox } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "react-step-progress-bar/styles.css";
+import { Checkmark } from 'react-checkmark';
+import {React} from "react";
+import './progress_bar.css';
 
 function ProgressStep({color, index, percent}) {
    

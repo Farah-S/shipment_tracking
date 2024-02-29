@@ -1,6 +1,6 @@
-import React from 'react';
+import {PERCENTAGES, GREY_COLOR} from '../utils/constants';
 import {Col, Row} from 'react-bootstrap';
-import {PERCENTAGES, RED_COLOR, GREY_COLOR} from '../utils/constants';
+import React from 'react';
 import '../App.css';
 
 function ProgressBarTitles ({percent, state, error, color}) {
