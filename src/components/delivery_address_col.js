@@ -1,7 +1,7 @@
-import React from 'react';
-import './delivery_address_col.css';
-import {Button, Col, Row} from 'react-bootstrap';
 import question_mark from '../assets/images/question_mark.jpg';
+import {Button, Col, Row} from 'react-bootstrap';
+import './delivery_address_col.css';
+import React from 'react';
 
 function DeliveryAddressCol({address}) {
     return (

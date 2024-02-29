@@ -12,11 +12,8 @@ try {
          throw new Error('Network response was not ok.');
       }
       const data = await response.json();
-      console.log("thunk");
-      
       return data;
     } catch (error) {
-      console.log("thunk err");
        return thunkAPI.rejectWithValue(error.message); 
     }
 })
@@ -32,20 +29,19 @@ export const shipmentSlice = createSlice({
   initialState: initialState,
   reducers: {},
     extraReducers:(builder) =>{
-      
-      // console.log("exreducer");
+    
       builder.addCase(fetchThunkShipment.pending, (state, action) => {
         state.status = FETCH_DATA_LOADING;
       })
       .addCase(fetchThunkShipment.fulfilled, (state, action) => {
-        // console.log("exreducer");
+       
         state.status = FETCH_DATA_SUCCESS;
         state.data = action.payload;
       })
       .addCase(fetchThunkShipment.rejected, (state, action) => {
-        // console.log("exreducer error");
+
         state.status = FETCH_DATA_ERROR;
-        state.error = action.error.message;
+        state.error = "Invalid ID";
       })
     },
   },

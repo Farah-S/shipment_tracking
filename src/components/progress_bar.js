@@ -1,10 +1,10 @@
-import React from "react";
-import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import {Row} from 'react-bootstrap';
-import './progress_bar.css';
 import ProgressStep from './progress_bar_step';
 import {PERCENTAGES} from '../utils/constants';
+import "react-step-progress-bar/styles.css";
+import {Row} from 'react-bootstrap';
+import './progress_bar.css';
+import React from "react";
 
 function StepProgressBar({color, percent}) {
 

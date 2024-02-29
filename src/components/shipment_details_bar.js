@@ -1,6 +1,6 @@
-import React from 'react';
-import './shipment_details_bar.css';
 import {Col, Row} from 'react-bootstrap';
+import './shipment_details_bar.css';
+import React from 'react';
 
 function ShipmentDetailsBar ({id,state, lastUpdate, retailer, deliveryDate, color}) {
 
